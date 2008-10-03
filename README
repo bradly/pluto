@@ -1,0 +1,32 @@
+Pluto is a feed aggregator used to create sites similiar to PlanetRubyonRails.com written by Bradly Feeley
+
+Required gems:
+  erubis
+  activesupport
+  feed-normalizer
+
+
+Example implementation:
+  require 'aggregator'
+  require 'showcase'
+
+  merb_feeds = Aggregator.new( [
+    'http://yehudakatz.com/feed/',
+    'http://feedproxy.feedburner.com/crazycool',
+    'http://www.merbing.com/articles.rss',
+    'http://blog.merbivore.com/articles.rss',
+    'http://merbist.com/feed/',
+    'http://feeds.feedburner.com/gweezlebur',
+    'http://jackndempsey.blogspot.com/feeds/posts/default',
+    'http://brainspl.at/xml/rss20/feed.xml',
+    'http://feeds.feedburner.com/blogspot/hassox' ] )
+
+  twitter_feeds = Aggregator.new( [
+    'http://search.twitter.com/search.atom?q=merb',
+    'http://twitter.com/statuses/user_timeline/16334375.rss'] )
+
+  view = Showcase.new(merb_feeds, twitter_feeds, 15)
+  view.render_output
+
+The code about assumes you have a Erubis file called default.html in the working directory.
+
