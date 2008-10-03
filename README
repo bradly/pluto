@@ -28,5 +28,6 @@ Example implementation:
   view = Showcase.new(merb_feeds, twitter_feeds, 15)
   view.render_output
 
-The code about assumes you have a Erubis file called default.html in the working directory.
+The code about assumes you have a Erubis file called default.html in the working directory. Just set this script to run every 15 minutes with a cronjob and your all set!
 
+Pluto was written by Bradly Feeley (http://www.bradlyfeeley.com)
