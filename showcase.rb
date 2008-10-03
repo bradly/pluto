@@ -11,7 +11,7 @@ class Showcase
     @sidebar_feed    = second_feed
     @max_per_page    = number_per_page
     @output_dir      = 'output'
-    @template        = File.read('view/default.html.erb')
+    @template        = File.read('default.html.erb')
     @number_of_pages = (@main_feed.entries.length / @max_per_page.to_f).ceil
   end
   

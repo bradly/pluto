@@ -1,10 +1,9 @@
-#http://search.twitter.com/search.atom?q=merb
 require 'rubygems'
 require 'feed-normalizer'
 
 class FeedNormalizer::Entry; attr_accessor :feed_title, :feed_url; end
 
-class Feed
+class Aggregator
   attr_accessor :feed_urls, :entries
   
   def initialize( urls = [] )    
@@ -22,7 +21,7 @@ class Feed
           @entries.concat rss.entries
         end
       rescue
-        puts "ERROR: #{feed_url}"
+        # sliently recue from any tmieouts or 404 when hitting the feeds
       end
       
     end
